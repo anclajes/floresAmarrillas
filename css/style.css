@@ -77,7 +77,6 @@ body{
     color: #111;
 }
 
-/* --- Fotos flotantes --- */
 .floating-photos {
   position: absolute;
   inset: 0;
@@ -87,27 +86,39 @@ body{
 
 .photo {
   position: absolute;
-  width: clamp(55px, 11vw, 110px);
-  height: clamp(55px, 11vw, 110px);
+  width: clamp(42px, 7vw, 85px);
+  height: clamp(42px, 7vw, 85px);
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 10px;
   border: 3px solid #fff;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
   --r: 0deg;
   transform: rotate(var(--r));
   animation: float 6s ease-in-out infinite;
 }
 
-.photo--1 { top: 6%;    left: 4%;   --r: -8deg; animation-delay: 0s;   }
-.photo--2 { top: 8%;    right: 4%;  --r: 7deg;  animation-delay: 1.2s; }
-.photo--3 { bottom: 6%; left: 5%;   --r: 6deg;  animation-delay: 2.4s; }
-.photo--4 { bottom: 6%; right: 5%;  --r: -5deg; animation-delay: 3.6s; }
+/* fila de arriba */
+.photo--1  { top: 3%;  left: 3%;   --r: -8deg; animation-delay: 0s;   }
+.photo--2  { top: 3%;  left: 22%;  --r: 6deg;  animation-delay: .5s;  }
+.photo--3  { top: 3%;  right: 22%; --r: -5deg; animation-delay: 1s;   }
+.photo--4  { top: 3%;  right: 3%;  --r: 7deg;  animation-delay: 1.5s; }
+
+/* costados, a la mitad */
+.photo--5  { top: 32%; left: 2%;   --r: 5deg;  animation-delay: 2s;   }
+.photo--6  { top: 32%; right: 2%;  --r: -6deg; animation-delay: 2.5s; }
+.photo--7  { bottom: 32%; left: 2%;  --r: -4deg; animation-delay: 3s;   }
+.photo--8  { bottom: 32%; right: 2%; --r: 4deg;  animation-delay: 3.5s; }
+
+/* fila de abajo */
+.photo--9  { bottom: 3%; left: 3%;   --r: 6deg;  animation-delay: 4s;   }
+.photo--10 { bottom: 3%; left: 22%;  --r: -7deg; animation-delay: 4.5s; }
+.photo--11 { bottom: 3%; right: 22%; --r: 5deg;  animation-delay: 5s;   }
+.photo--12 { bottom: 3%; right: 3%;  --r: -6deg; animation-delay: 5.5s; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(var(--r)); }
-  50%      { transform: translateY(-14px) rotate(var(--r)); }
+  50%      { transform: translateY(-12px) rotate(var(--r)); }
 }
-
 /* --- Responsive celular --- */
 @media screen and (max-width:574px){
     .greetings{
@@ -120,5 +131,12 @@ body{
     }
     .button a{
         font-size: 1rem;
+    }
+    .photo {
+        width: clamp(38px, 13vw, 55px);
+        height: clamp(38px, 13vw, 55px);
+    }
+    .photo--5, .photo--6, .photo--7, .photo--8 {
+        display: none;
     }
 }

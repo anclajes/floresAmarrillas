@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,900&display=swap');
+
+*{
+    font-family: 'Poppins', cursive;
+    box-sizing: border-box;
+}
+
+body{
+    color: azure;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 35%, #2a1508 0%, #150a04 45%, #000 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+}
+
+.botones{
+    padding: 9px;
+    border-radius: 80px;
+    background-color: transparent;
+    border: none;
+}
+
+.botones a{
+    background-color: #0a2be9;
+    padding: 9px 20px;
+    border-radius: 80px;
+}
+
+.botones a:focus{
+    background-color: rgb(50, 194, 194);
+}
+
+/* el texto siempre va encima de las fotos */
+.greetings, .description, .button {
+    position: relative;
+    z-index: 2;
+}
+
+.greetings{
+    font-size: 7rem;
+    font-weight: 900;
+}
+.greetings > span{
+    animation: glow 2.5s ease-in-out infinite;
+}
+@keyframes glow{
+    0%, 100%{
+        color: #fff;
+        text-shadow: 0 0 12px #39c6d6, 0 0 50px #39c6d6, 0 0 100px #39c6d6;
+    }
+    10%, 90%{
+        color: #111;
+        text-shadow: none;
+    }
+}
+.greetings > span:nth-child(2){ animation-delay: .2s; }
+.greetings > span:nth-child(3){ animation-delay: .4s; }
+.greetings > span:nth-child(4){ animation-delay: .6s; }
+.greetings > span:nth-child(5){ animation-delay: .8s; }
+.greetings > span:nth-child(6){ animation-delay: 1s; }
+
+.description{
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.button a{
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111;
+}
+
+/* --- Fotos flotantes --- */
+.floating-photos {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.photo {
+  position: absolute;
+  width: clamp(55px, 11vw, 110px);
+  height: clamp(55px, 11vw, 110px);
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  --r: 0deg;
+  transform: rotate(var(--r));
+  animation: float 6s ease-in-out infinite;
+}
+
+.photo--1 { top: 6%;    left: 4%;   --r: -8deg; animation-delay: 0s;   }
+.photo--2 { top: 8%;    right: 4%;  --r: 7deg;  animation-delay: 1.2s; }
+.photo--3 { bottom: 6%; left: 5%;   --r: 6deg;  animation-delay: 2.4s; }
+.photo--4 { bottom: 6%; right: 5%;  --r: -5deg; animation-delay: 3.6s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(var(--r)); }
+  50%      { transform: translateY(-14px) rotate(var(--r)); }
+}
+
+/* --- Responsive celular --- */
+@media screen and (max-width:574px){
+    .greetings{
+        font-size: 3.2rem;
+        font-weight: 800;
+    }
+    .description{
+        font-size: 1.1rem;
+        padding: 0 10px;
+    }
+    .button a{
+        font-size: 1rem;
+    }
+}

@@ -4,9 +4,9 @@ var lyrics = document.querySelector("#lyrics");
 
 // Si quieres que la canción empiece en cierto minuto (en vez de 0:00),
 // descomenta esto y pon el segundo donde quieres que arranque:
-// audio.addEventListener("loadedmetadata", function () {
-//   audio.currentTime = 45; // ejemplo: empieza en el segundo 45 (0:45)
-// });
+audio.addEventListener("loadedmetadata", function () {
+audio.currentTime = 45; // ejemplo: empieza en el segundo 45 (0:45)
+ });
 
 // Array de objetos con cada línea y el segundo en el que aparece.
 // Vacío por defecto: agrega tus propias líneas sincronizadas con tu canción nueva,

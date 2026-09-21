@@ -86,8 +86,8 @@ body{
 
 .photo {
   position: absolute;
-  width: clamp(42px, 7vw, 85px);
-  height: clamp(42px, 7vw, 85px);
+  width: clamp(42px, 9vw, 85px);
+  height: clamp(42px, 9vw, 85px);
   object-fit: cover;
   border-radius: 10px;
   border: 3px solid #fff;
@@ -98,22 +98,16 @@ body{
 }
 
 /* fila de arriba */
-.photo--1  { top: 3%;  left: 3%;   --r: -8deg; animation-delay: 0s;   }
-.photo--2  { top: 3%;  left: 22%;  --r: 6deg;  animation-delay: .5s;  }
-.photo--3  { top: 3%;  right: 22%; --r: -5deg; animation-delay: 1s;   }
-.photo--4  { top: 3%;  right: 3%;  --r: 7deg;  animation-delay: 1.5s; }
-
-/* costados, a la mitad */
-.photo--5  { top: 32%; left: 2%;   --r: 5deg;  animation-delay: 2s;   }
-.photo--6  { top: 32%; right: 2%;  --r: -6deg; animation-delay: 2.5s; }
-.photo--7  { bottom: 32%; left: 2%;  --r: -4deg; animation-delay: 3s;   }
-.photo--8  { bottom: 32%; right: 2%; --r: 4deg;  animation-delay: 3.5s; }
+.photo--1 { top: 3%;    left: 3%;   --r: -8deg; animation-delay: 0s;   }
+.photo--2 { top: 3%;    left: 22%;  --r: 6deg;  animation-delay: .5s;  }
+.photo--3 { top: 3%;    right: 22%; --r: -5deg; animation-delay: 1s;   }
+.photo--4 { top: 3%;    right: 3%;  --r: 7deg;  animation-delay: 1.5s; }
 
 /* fila de abajo */
-.photo--9  { bottom: 3%; left: 3%;   --r: 6deg;  animation-delay: 4s;   }
-.photo--10 { bottom: 3%; left: 22%;  --r: -7deg; animation-delay: 4.5s; }
-.photo--11 { bottom: 3%; right: 22%; --r: 5deg;  animation-delay: 5s;   }
-.photo--12 { bottom: 3%; right: 3%;  --r: -6deg; animation-delay: 5.5s; }
+.photo--5 { bottom: 3%; left: 3%;   --r: 6deg;  animation-delay: 2s;   }
+.photo--6 { bottom: 3%; left: 22%;  --r: -7deg; animation-delay: 2.5s; }
+.photo--7 { bottom: 3%; right: 22%; --r: 5deg;  animation-delay: 3s;   }
+.photo--8 { bottom: 3%; right: 3%;  --r: -6deg; animation-delay: 3.5s; }
 
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(var(--r)); }
@@ -135,8 +129,5 @@ body{
     .photo {
         width: clamp(38px, 13vw, 55px);
         height: clamp(38px, 13vw, 55px);
-    }
-    .photo--5, .photo--6, .photo--7, .photo--8 {
-        display: none;
     }
 }
